@@ -3,7 +3,7 @@ import {Entity, PrimaryGeneratedColumn, Column, createConnection, Connection, Re
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn()
-  id: number;
+  id?: number;
 
   @Column()
   name: string;
