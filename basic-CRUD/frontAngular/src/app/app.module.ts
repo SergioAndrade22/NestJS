@@ -17,10 +17,12 @@ import { FormsModule } from '@angular/forms';
 // Okta Authentication
 import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
 
+// Aplication imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './components/products/products.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductsService } from './services/products.service';
 
 const config = {
   clientId: '0oalvb0qvYCWjX6xf5d5',
@@ -54,6 +56,7 @@ const config = {
   ],
   providers: [
     { provide: OKTA_CONFIG, useValue: config },
+    ProductsService
   ],
   bootstrap: [AppComponent]
 })
