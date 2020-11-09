@@ -1,11 +1,13 @@
-import { Body, Controller, Param, Get, Post, Delete } from '@nestjs/common';
+import { Body, Controller, Param, Get, Post, Delete, UseGuards } from '@nestjs/common';
 
 import { ProductsService } from './products.service';
 import { Product } from '../models/product.model';
 import { CreateProductDTO } from '../models/dto/create-product-dto';
+import { OktaGuard } from '../auth/okta.guard';
 
 
 @Controller('products')
+@UseGuards(OktaGuard)
 export class ProductsController {
     
     constructor(private _productsService: ProductsService){}
